@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before install:
+  - docker build -t peiyingchin/docker-react -f Dockerfile.dev . 
+
+scirpt:
+  - docker run peiyingchin/docker-react npm run test -- --covreage
